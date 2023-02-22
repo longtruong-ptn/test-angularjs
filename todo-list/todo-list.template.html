@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      <p>
+        Search: {{$ctrl.name}}
+        <input ng-model="$ctrl.search" />
+      </p>
+
+      <p>
+        Sort by:
+        <select ng-model="$ctrl.sortBy">
+          <option value="title">Alphabetical</option>
+          <option value="id">Newest</option>
+        </select>
+      </p>
+
+      <button>
+        <a href="#!/create-new-todo"> Create new Todo </a>
+      </button>
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul>
+        <li
+          ng-repeat="todo in $ctrl.todoList | orderBy: $ctrl.sortBy | filter: $ctrl.search"
+        >
+          <a href="#!/todo-detail/{{todo.id}}">{{todo.title}}</a>
+          <p>{{todo.description}}</p>
+          <button ng-click="$ctrl.deleteTodo(todo.id)">Delete this Todo</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
