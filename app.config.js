@@ -12,7 +12,7 @@
           template: "<todo-detail></todo-detail>",
         })
         .when("/create-new-todo", {
-          template: "",
+          template: "<todo-create></todo-create>",
         })
         .otherwise("/todo-list");
     },

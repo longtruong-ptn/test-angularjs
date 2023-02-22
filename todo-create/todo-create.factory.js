@@ -24,7 +24,7 @@
     function createTodo(todoObject) {
       var request = $http({
         method: "POST",
-        url: `https://63b7ee2f6f4d5660c6c62386.mockapi.io/api/v1/tasks`,
+        url: 'https://63b7ee2f6f4d5660c6c62386.mockapi.io/api/v1/tasks',
         data: todoObject,
       });
       return request.then(handleSuccess, handleError);

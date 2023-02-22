@@ -1,11 +1,12 @@
 <form>
   <h1>Title:</h1>
 
-  <input type="text" />
-
+  <input type="text" ng-model="$ctrl.title" />
+  
   <h1>Description:</h1>
 
-  <input type="text" />
+  <input type="text" ng-model="$ctrl.description" />
 
-  <button>Create new Todo</button>
+  <button ng-click="$ctrl.createNewTodo()">Create new Todo</button>
 </form>
+<div ng-bind="$ctrl.todoCreate"></div>
